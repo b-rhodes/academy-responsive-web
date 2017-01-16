@@ -1,0 +1,47 @@
+@mixin container-box($colour) {
+    border: 1px solid $colour;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+
+      @media screen and (min-width: 960px) {
+          max-width: 918px;
+          margin: 50px auto 20px;
+          box-shadow: 0 0 10px 1px #999;
+          @include container-box(#999);
+      }
+}
+
+
+h1 {
+      font-family: 'Ubuntu', sans-serif;
+      background-color: $main-colour;
+      border: 1px solid $main-colour;
+      color: #FFF;
+      margin-top: 0;
+      padding: 10px 20px;
+
+      @media screen and (min-width: 960px) {
+          font-size: 42px;
+      }
+}
+
+
+.content {
+    padding: 0 20px 20px;
+
+    .content-footer {
+        @include container-box($main-colour);
+        padding: 10px;
+        margin-top: 20px;
+    }
+}
